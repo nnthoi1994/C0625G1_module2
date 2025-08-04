@@ -136,9 +136,112 @@ public class Bai3 {
 
 
             System.out.println(str);
-        } else if (number>=100&&number<1000){
+        } else if (number >= 100 && number < 1000) {
+            int tram = number / 100;
+            int chuc = (number / 10) % 10;
+            int donVi = number % 10;
 
+            // Hàng trăm
+            switch (tram) {
+                case 1:
+                    str += "Một trăm";
+                    break;
+                case 2:
+                    str += "Hai trăm";
+                    break;
+                case 3:
+                    str += "Ba trăm";
+                    break;
+                case 4:
+                    str += "Bốn trăm";
+                    break;
+                case 5:
+                    str += "Năm trăm";
+                    break;
+                case 6:
+                    str += "Sáu trăm";
+                    break;
+                case 7:
+                    str += "Bảy trăm";
+                    break;
+                case 8:
+                    str += "Tám trăm";
+                    break;
+                case 9:
+                    str += "Chín trăm";
+                    break;
+            }
+
+            // Hàng chục và đơn vị
+            if (chuc == 0 && donVi != 0) {
+                str += " linh";
+            } else if (chuc != 0) {
+                switch (chuc) {
+                    case 1:
+                        str += " mười";
+                        break;
+                    case 2:
+                        str += " hai mươi";
+                        break;
+                    case 3:
+                        str += " ba mươi";
+                        break;
+                    case 4:
+                        str += " bốn mươi";
+                        break;
+                    case 5:
+                        str += " năm mươi";
+                        break;
+                    case 6:
+                        str += " sáu mươi";
+                        break;
+                    case 7:
+                        str += " bảy mươi";
+                        break;
+                    case 8:
+                        str += " tám mươi";
+                        break;
+                    case 9:
+                        str += " chín mươi";
+                        break;
+                }
+            }
+
+            if (donVi != 0) {
+                switch (donVi) {
+                    case 1:
+                        str += (chuc != 0 && chuc != 1) ? " mốt" : " một";
+                        break;
+                    case 2:
+                        str += " hai";
+                        break;
+                    case 3:
+                        str += " ba";
+                        break;
+                    case 4:
+                        str += " bốn";
+                        break;
+                    case 5:
+                        str += (chuc == 0 || chuc == 1) ? " năm" : " lăm";
+                        break;
+                    case 6:
+                        str += " sáu";
+                        break;
+                    case 7:
+                        str += " bảy";
+                        break;
+                    case 8:
+                        str += " tám";
+                        break;
+                    case 9:
+                        str += " chín";
+                        break;
+                }
+            }
+
+            System.out.println("Số bạn vừa nhập là: " + str);
         }
+
 
     }
 }
