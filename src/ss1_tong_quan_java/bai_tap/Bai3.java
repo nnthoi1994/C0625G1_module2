@@ -42,7 +42,7 @@ public class Bai3 {
                     break;
 
             }
-        }  else if (number>=10&&number<20){
+        } else if (number >= 10 && number < 20) {
             switch (number) {
                 case 10:
                     System.out.println("Số mười");
@@ -75,9 +75,9 @@ public class Bai3 {
                     System.out.println("Số mười chín");
                     break;
             }
-        } else if(number>=20&&number<100){
-            int chuc  = number/10;
-            int donVi = number%10;
+        } else if (number >= 20 && number < 100) {
+            int chuc = number / 10;
+            int donVi = number % 10;
             switch (chuc) {
                 case 2:
                     str += "Số Hai mươi";
@@ -104,7 +104,7 @@ public class Bai3 {
                     str += "Số Chín mươi";
                     break;
             }
-            switch (donVi){
+            switch (donVi) {
                 case 1:
                     str += " Mốt";
                     break;
