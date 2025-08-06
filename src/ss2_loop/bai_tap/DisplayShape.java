@@ -2,7 +2,7 @@ package ss2_loop.bai_tap;
 
 import java.util.Scanner;
 
-public class display_shape {
+public class DisplayShape {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int choice;

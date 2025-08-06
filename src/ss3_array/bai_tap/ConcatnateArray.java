@@ -3,7 +3,7 @@ package ss3_array.bai_tap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class concatnate_array {
+public class ConcatnateArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = 0;

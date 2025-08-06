@@ -1,9 +1,9 @@
 package ss2_loop.bai_tap;
 
-public class prime_under_100 {
+public class TwentyPrime {
     public static void main(String[] args) {
         int count = 0;
-        for (int i = 0; i <= 100; i++) {
+        for (int i = 0; count < 20; i++) {
             if (isPrime(i)) {
                 System.out.println(i + " ");
                 count++;
