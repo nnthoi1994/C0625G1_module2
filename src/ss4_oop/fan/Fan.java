@@ -1,4 +1,4 @@
-package ss4_oop;
+package ss4_oop.fan;
 
 public class Fan {
     final int SLOW = 1;
@@ -60,17 +60,22 @@ public class Fan {
         this.color = color;
     }
 
-    @Override
     public String toString() {
-        return "Fan{" +
-                "SLOW=" + SLOW +
-                ", MEDIUM=" + MEDIUM +
-                ", FAST=" + FAST +
-                ", speed=" + speed +
-                ", on=" + on +
-                ", radius=" + radius +
-                ", color='" + color + '\'' +
-                '}';
+        return this.isOn() ? "Speed: " + this.getSpeed() + "," + " color: " + this.getColor() + ", radius: " + this.getRadius() + ", fan is on " :
+               "color: " + this.getColor() + ", radius: " + getRadius() + ", fan is off ";
     }
+
+//    @Override
+//    public String toString() {
+//        return "Fan{" +
+//                "SLOW=" + SLOW +
+//                ", MEDIUM=" + MEDIUM +
+//                ", FAST=" + FAST +
+//                ", speed=" + speed +
+//                ", on=" + on +
+//                ", radius=" + radius +
+//                ", color='" + color + '\'' +
+//                '}';
+//    }
 
 }

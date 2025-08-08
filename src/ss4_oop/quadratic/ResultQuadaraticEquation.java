@@ -1,4 +1,4 @@
-package ss4_oop;
+package ss4_oop.quadratic;
 
 import java.util.Scanner;
 

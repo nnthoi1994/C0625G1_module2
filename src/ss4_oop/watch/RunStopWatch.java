@@ -1,4 +1,4 @@
-package ss4_oop;
+package ss4_oop.watch;
 import java.util.Random;
 public class RunStopWatch {
     public static void main(String[] args) {

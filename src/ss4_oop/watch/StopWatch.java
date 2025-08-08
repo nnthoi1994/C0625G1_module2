@@ -1,15 +1,19 @@
-package ss4_oop;
+package ss4_oop.watch;
 
 public class StopWatch {
     private long startTime;
     private long endTime;
-    public void start(){
+
+
+    public void start() {
         this.startTime = System.currentTimeMillis();
     }
-    public void stop(){
+
+    public void stop() {
         this.endTime = System.currentTimeMillis();
     }
-    public long getElapsedTime(){
+
+    public long getElapsedTime() {
         return this.endTime - this.startTime;
     }
 }
