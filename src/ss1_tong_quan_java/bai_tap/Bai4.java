@@ -5,12 +5,12 @@ public class Bai4 {
 
 
 
-        if (n > 0)
-            return 1;
-        else if (n == 0)
-            return 0;
-        else if (n<0)
-            return -1;
-        System.out.println(sign(9));
+//        if (n > 0)
+//            return 1;
+//        else if (n == 0)
+//            return 0;
+//        else if (n<0)
+//            return -1;
+//        System.out.println(sign(9));
     }
 }
