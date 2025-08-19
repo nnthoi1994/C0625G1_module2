@@ -1,6 +1,6 @@
 package ss5_access_modifier.manage;
 
-public class StudentManager {
+public class Product {
     // class chức năng quan lý đối tượng student = >CRUD
     private static Student[] studentList = new Student[100];
 

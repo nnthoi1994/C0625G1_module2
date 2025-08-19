@@ -1,7 +1,7 @@
 package ss5_access_modifier.manage;
 import java.util.Scanner;
 public class Menu {
-    private StudentManager studentManager = new StudentManager();
+    private Product studentManager = new Product();
     public  void displayMainMenu(){
         Scanner scanner = new Scanner(System.in);
         final int DISPLAY = 1;
@@ -45,7 +45,7 @@ public class Menu {
 //                    break;
                 case SEARCH:
                     System.out.println("----Đây là chức năng tìm kiếm----------");
-                    StudentManager search = new StudentManager();
+                    Product search = new Product();
                     int iD = Integer.parseInt(scanner.nextLine());
                     System.out.println("nhập tên");
                     if(search.find(iD)==null){
