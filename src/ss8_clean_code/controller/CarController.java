@@ -33,7 +33,7 @@ public class CarController {
             switch (choice) {
                 case DISPLAY:
                     System.out.println("Display list cars");
-                    ArrayList<Car> carList = this.carService.findAll();
+                    List<Car> carList = this.carService.findAll();
                     CarView.display(carList);
                     break;
                 case ADD:
@@ -57,7 +57,7 @@ public class CarController {
                     System.out.println("This is search function \n Please enter number control of car");
                     String numberControl2 = scanner.nextLine();
                     this.carService.search(numberControl2);
-                    ArrayList<Car> searchList = this.carService.search(numberControl2);
+                    List<Car> searchList = this.carService.search(numberControl2);
                     if (!searchList.isEmpty()) {
                         CarView.display(searchList);
                     } else {
@@ -73,6 +73,7 @@ public class CarController {
                         System.out.println("Enter info of car to edit!");
                         editCar = CarView.editData(numberControlEdit);
                         this.carService.edit(editCar);
+                        System.out.println("Edit succeed");
                     } else {
                         System.out.println("Not found Car to edit");
                     }

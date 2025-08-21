@@ -10,7 +10,7 @@ public class CarService implements ICarService{
     CarRepository carRepository = new CarRepository();
 
     @Override
-    public ArrayList<Car> findAll() {
+    public List<Car> findAll() {
         return carRepository.findAll();
     }
 
@@ -30,7 +30,7 @@ public class CarService implements ICarService{
     }
 
     @Override
-    public ArrayList<Car> search(String numControlCar) {
+    public List<Car> search(String numControlCar) {
         return carRepository.search(numControlCar);
     }
 

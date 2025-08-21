@@ -3,11 +3,12 @@ package ss8_clean_code.view;
 import ss8_clean_code.entity.Car;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CarView {
     public static Scanner sc = new Scanner(System.in);
-    public static void display(ArrayList<Car> cars){
+    public static void display(List<Car> cars){
         for (int i = 0; i < cars.size(); i++) {
             System.out.println(cars.get(i));
         }

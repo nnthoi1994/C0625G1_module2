@@ -30,13 +30,19 @@ public class Car extends Vehicle {
     }
 
     @Override
+    public String getInfoToCsv() {
+        return this.controlNumber + "," + this.nameManufacturer + "," + this.yearManufacture + "," + this.nameOwner + "," + this.numberSeat + "," + this.typeCar;
+    }
+
+    @Override
     public String toString() {
         return "Car{" +
-                "Type Car='" + typeCar + '\'' +
-                ", Control number='" + controlNumber + '\'' +
-                ", Name manufacturer='" + nameManufacturer + '\'' +
-                ", Year manufacture='" + yearManufacture + '\'' +
-                ", Name owner='" + nameOwner + '\'' +
+                "controlNumber='" + controlNumber + '\'' +
+                ", nameManufacturer='" + nameManufacturer + '\'' +
+                ", yearManufacture=" + yearManufacture +
+                ", nameOwner='" + nameOwner + '\'' +
+                ", numberSeat=" + numberSeat +
+                ", typeCar='" + typeCar + '\'' +
                 '}';
     }
 }

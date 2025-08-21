@@ -1,58 +1,126 @@
 package ss8_clean_code.repository;
 
 import ss8_clean_code.entity.Car;
+import ss8_clean_code.util.ReadWrite;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.*;
 import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
 
-public class CarRepository implements ICarRepository{
-    static Scanner sc = new Scanner(System.in);
-            private static final ArrayList<Car> carList = new ArrayList<>();
-
-    static {
-        carList.add(new Car("43C-11231", "Honda", 2019, "Nguyen Van A", 12, "Passenger bus"));
-        carList.add(new Car("75C-14444", "Hyundai", 2019, "Nguyen Van B", 12, "Tour bus"));
-        carList.add(new Car("74C-13333", "Ika", 2019, "Nguyen Van C", 12, "Tour bus"));
-        carList.add(new Car("92C-18787", "Mecsides", 2019, "Nguyen Van D", 12, "Passenger bus"));
-    }
+public class CarRepository implements ICarRepository {
+    private final String pathFile = "src/ss8_clean_code/data/car.csv";
 
     @Override
-    public ArrayList<Car> findAll() {
+    public List<Car> findAll() {
+        List<Car> carList = new ArrayList<>();
+        try {
+            List<String> stringList = ReadWrite.readFileCSV(pathFile);
+            String[] array = null;
+            for (String line : stringList) {
+                array = line.split(",");
+                Car car = new Car(array[0], array[1], Integer.parseInt(array[2]), array[3], Integer.parseInt(array[4]), array[5]);
+                carList.add(car);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Loi doc file");
+            ;
+        }
+
+
         return carList;
     }
 
     @Override
     public boolean add(Car car) {
-        return carList.add(car);
+        List<String> stringList = new ArrayList<>();
+        stringList.add(car.getInfoToCsv());
+        try {
+            ReadWrite.writeFileCSV(pathFile, stringList, true);
+        } catch (IOException e) {
+            System.out.println("Loi ghi file");
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public boolean edit( Car car) {
-        for (int i = 0; i < carList.size(); i++) {
-            if(Objects.equals(carList.get(i).getControlNumber(), car.getControlNumber())){
-                carList.set(i, car );
+    public boolean edit(Car car) {
+        List<Car> carList = new ArrayList<>();
+        try {
+            List<String> stringList = ReadWrite.readFileCSV(pathFile);
+            String[] array = null;
+            for (String line : stringList) {
+                array = line.split(",");
+                Car carRead = new Car(array[0], array[1], Integer.parseInt(array[2]), array[3], Integer.parseInt(array[4]), array[5]);
+                carList.add(carRead);
             }
+
+        } catch (IOException e) {
+            System.out.println("Loi doc file");
+            ;
+        }
+        for (int i = 0; i < carList.size(); i++) {
+            if (Objects.equals(carList.get(i).getControlNumber(), car.getControlNumber())) {
+                carList.set(i, car);
+            }
+        }
+        List<String> stringList = new ArrayList<>();
+        for (Car carWrite : carList) {
+            stringList.add(carWrite.getInfoToCsv());
+        }
+        try {
+            ReadWrite.writeFileCSV(pathFile, stringList, false);
+        } catch (IOException e) {
+            System.out.println("Loi ghi file");
+            return false;
         }
         return true;
     }
 
     @Override
     public boolean delete(String numberControl) {
+        List<Car> carList = findAll();
+
         for (int i = 0; i < carList.size(); i++) {
             if (Objects.equals(carList.get(i).getControlNumber(), numberControl)) {
                 carList.remove(i);
-                return true;
+break;
             }
         }
-        return false;
+
+        List<String> stringList = new ArrayList<>();
+        for (Car carWrite : carList) {
+            stringList.add(carWrite.getInfoToCsv());
+        }
+        try {
+            ReadWrite.writeFileCSV(pathFile, stringList, false);
+        } catch (IOException e) {
+            System.out.println("Loi ghi file");
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public Car findByNumberControl(String numberControl) {
+        List<Car> carList = new ArrayList<>();
+        try {
+            List<String> stringList = ReadWrite.readFileCSV(pathFile);
+            String[] array = null;
+            for (String line : stringList) {
+                array = line.split(",");
+                Car car = new Car(array[0], array[1], Integer.parseInt(array[2]), array[3], Integer.parseInt(array[4]), array[5]);
+                carList.add(car);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Loi doc file");
+            ;
+        }
         for (int i = 0; i < carList.size(); i++) {
-            if(Objects.equals(carList.get(i).getControlNumber(), numberControl)){
+            if (Objects.equals(carList.get(i).getControlNumber(), numberControl)) {
                 return carList.get(i);
             }
         }
@@ -60,17 +128,16 @@ public class CarRepository implements ICarRepository{
     }
 
     @Override
-    public ArrayList<Car> search(String numberControl){
-        ArrayList<Car> searchList = new ArrayList<>();
+    public List<Car> search(String numberControl) {
+        List<Car> carList = findAll();
+        List<Car> searchList = new ArrayList<>();
         for (int i = 0; i < carList.size(); i++) {
-            if(carList.get(i).getControlNumber().contains(numberControl)){
+            if (carList.get(i).getControlNumber().contains(numberControl)) {
                 searchList.add(carList.get(i));
             }
         }
         return searchList;
     }
-
-
 
 
 }

@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface ICarService {
-    ArrayList<Car> findAll();
+    List<Car> findAll();
     Car findByNumberControl(String numberControl);
     boolean add(Car car);
     boolean delete(String numberControlCar);
-    ArrayList<Car> search(String numControlCar);
+    List<Car> search(String numControlCar);
     boolean edit(Car car);
 
 }
