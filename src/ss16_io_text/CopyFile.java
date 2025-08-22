@@ -21,7 +21,6 @@ public class CopyFile {
             System.out.println(stringList);
             System.out.println("Sao chep thanh cong");
             System.out.println(f1.length());
-
         } catch (IOException e) {
             System.out.println("Không tìm thấy file");;
         }
