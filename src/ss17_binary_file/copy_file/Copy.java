@@ -33,17 +33,21 @@ public class Copy {
             } else if(f2.exists()){
                 System.out.println("File bạn muốn dán đã tồn tại, bạn có muốn lưu đè (y/n)");
                 String overWrite = scanner.nextLine();
-                if(overWrite=="y"){
+                if(overWrite.equals("y")){
                     stringList = ListArrayBinaryFile.readBinaryFile(path1);
                     ListArrayBinaryFile.writeBinaryFile(path2, stringList);
                     System.out.println(stringList);
                     System.out.println(f1.length());
-                    return true;
-                } return false;
-
+                } else return false;
+            } else {
+                stringList = ListArrayBinaryFile.readBinaryFile(path1);
+                ListArrayBinaryFile.writeBinaryFile(path2, stringList);
+                System.out.println(stringList);
+                System.out.println(f1.length());
+            }
+            return true;
             }
 
+        }
 
-        }
-        }
 
