@@ -5,7 +5,7 @@ import ss8_clean_code.entity.Car;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface    ICarRepository {
+public interface ICarRepository {
     List<Car> findAll();
     boolean add(Car car);
     boolean edit(Car car);
