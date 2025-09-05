@@ -14,9 +14,9 @@ public class EmployeeService implements IEmployeeService {
     public void display() {
         List<Employee> employeeList = employeeRepository.getEmployeeList();
         if (employeeList.isEmpty()) {
-            System.out.println("Danh sách nhân viên trống");
+            System.out.println("Employee list is empty");
         } else {
-            System.out.println("---Danh sách nhân viên---");
+            System.out.println("---Employee List---");
             for (Employee employee : employeeList) {
                 System.out.println(employee);
             }

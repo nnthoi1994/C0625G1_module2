@@ -22,7 +22,7 @@ public class MainController {
                         EmployeeController.displayEmployMenu();
                         break;
                     case 2:
-//                        displayCustomerMenu();
+                        CustomerController.displayCustomerMenu();
                         break;
                     case 3:
 //                        displayFacilityMenu();

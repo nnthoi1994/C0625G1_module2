@@ -8,12 +8,16 @@ import java.util.Locale;
 
 public class ValidateUtils {
     private static final String REGEX_ID_EMPLOYEE = "NV-\\d{4}";
+    private static final String REGEX_ID_CUSTOMER = "KH-\\d{4}";
     private static final String REGEX_NAME = "^[A-Z][a-z]*(\\s[A-Z][a-z]*)+$";
     private static final String REGEX_ID_NUMBER = "\\d{9}|\\d{12}";
     private static final String REGEX_PHONE_NUMBER = "[0][1-9]{9}";
 
     public static boolean isIdEmployee(String idEmployee) {
         return idEmployee.matches(REGEX_ID_EMPLOYEE);
+    }
+    public static boolean isIdCustomer(String idCustomer) {
+        return idCustomer.matches(REGEX_ID_CUSTOMER);
     }
 
     public static boolean isName(String name) {

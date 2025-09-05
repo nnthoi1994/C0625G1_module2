@@ -1,4 +1,4 @@
 package case_study.furama_resort.repository;
 
-public interface IBookingRepository extends Repository{
+public interface IBookingRepository extends IRepository {
 }

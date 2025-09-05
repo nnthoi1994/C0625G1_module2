@@ -1,5 +1,6 @@
 package case_study.furama_resort.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Customer extends Person{
@@ -10,7 +11,7 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String name, Date dateOfBirth, String gender, String idNumber, String phoneNumber, String email, String idEmployee, String educationLevel, String position, double salary) {
+    public Customer(String name, Date dateOfBirth, String gender, String idNumber, String phoneNumber, String email, String idCustomer, String typeCustomer, String address) {
         super(name, dateOfBirth, gender, idNumber, phoneNumber, email);
         this.idCustomer = idCustomer;
         this.typeCustomer = typeCustomer;
@@ -48,5 +49,11 @@ public class Customer extends Person{
                 ", loaiKhach='" + typeCustomer + '\'' +
                 ", diaChi='" + address + '\'' +
                 "} " + super.toString();
+    }
+
+    public String getInfoToCsv(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String ngaySinhFormatted = dateFormat.format(this.getDateOfBirth());
+        return this.getIdCustomer() + ","+ this.getName() + "," +ngaySinhFormatted + "," +this.getGender() + "," +this.getIdNumber() + "," +this.getPhoneNumber() + ","  +this.getEmail()+ ","  +this.getTypeCustomer() + "," +this.getAddress();
     }
 }

@@ -77,11 +77,11 @@ public abstract class Person {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dateFormated = dateFormat.format(this.dateOfBirth);
         return "Person{" +
-                "hoTen='" + name + '\'' +
-                ", ngaySinh='" + dateFormated + '\'' +
-                ", gioiTinh='" + gender + '\'' +
-                ", soCMND='" + idNumber + '\'' +
-                ", soDienThoai='" + phoneNumber + '\'' +
+                "name='" + name + '\'' +
+                ", dateOfBirth='" + dateFormated + '\'' +
+                ", gender='" + gender + '\'' +
+                ", idNumber='" + idNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
