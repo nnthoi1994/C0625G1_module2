@@ -76,14 +76,12 @@ public abstract class Person {
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dateFormated = dateFormat.format(this.dateOfBirth);
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", dateOfBirth='" + dateFormated + '\'' +
-                ", gender='" + gender + '\'' +
-                ", idNumber='" + idNumber + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return  "name: '" + name + '\'' +
+                ", date Of Birth: '" + dateFormated + '\'' +
+                ", gender: '" + gender + '\'' +
+                ", ID card: '" + idNumber + '\'' +
+                ", Phone number='" + phoneNumber + '\'' +
+                ", Email='" + email + '\'';
     }
 }
 

@@ -35,7 +35,7 @@ public class FacilityService implements IFacilityService{
             System.out.println("LIST MAINTENANCE FACILITIES IS EMTY");
             return;
         }
-        for(Map.Entry<Facility,Integer> entry :)
+//        for(Map.Entry<Facility,Integer> entry :)
 
     }
 }

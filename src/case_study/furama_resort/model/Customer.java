@@ -44,11 +44,10 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "maKhacHang='" + idCustomer + '\'' +
-                ", loaiKhach='" + typeCustomer + '\'' +
-                ", diaChi='" + address + '\'' +
-                "} " + super.toString();
+        return  "ID customer='" + idCustomer + '\'' +
+                ", Type customer='" + typeCustomer + '\'' +
+                ", Adress='" + address + '\'' +
+                " " + super.toString();
     }
 
     public String getInfoToCsv(){
