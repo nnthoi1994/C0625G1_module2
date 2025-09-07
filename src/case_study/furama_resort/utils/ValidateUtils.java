@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.Locale;
 
 public class ValidateUtils {
     private static final String REGEX_ID_EMPLOYEE = "NV-\\d{4}";

@@ -1,20 +1,21 @@
 package case_study.quan_ly_sv.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public abstract class Person {
     private String id;
-    private String name;
-    private Date ngaySinh;
+    private String ten;
+    private LocalDate ngaySinh;
     private String gioiTinh;
     private String soDienThoai;
 
     public Person() {
     }
 
-    public Person(String id, String name, Date ngaySinh, String gioiTinh, String soDienThoai) {
+    public Person(String id, String ten, LocalDate ngaySinh, String gioiTinh, String soDienThoai) {
         this.id = id;
-        this.name = name;
+        this.ten = ten;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
         this.soDienThoai = soDienThoai;
@@ -28,19 +29,19 @@ public abstract class Person {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTen() {
+        return ten;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTen(String name) {
+        this.ten = ten;
     }
 
-    public Date getNgaySinh() {
+    public LocalDate getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(Date ngaySinh) {
+    public void setNgaySinh(LocalDate ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -62,12 +63,11 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "LopHoc{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", ngaySinh=" + ngaySinh +
-                ", gioiTinh='" + gioiTinh + '\'' +
-                ", soDienThoai='" + soDienThoai + '\'' +
+        return "Mã='" + id + '\'' +
+                ", Tên='" + ten + '\'' +
+                ", Ngày sinh=" + ngaySinh +
+                ", Giới tính='" + gioiTinh + '\'' +
+                ", Số điện thoại='" + soDienThoai + '\'' +
                 '}';
     }
 }

@@ -70,8 +70,11 @@ public class EmployeeController {
 
                          ValidateUtils.is18YearsOld(dateOfBirth);
                          break;
-                     } catch (InputException |ParseException e) {
-                         System.out.println("Lỗi định dạng ngày tháng năm, vui lòng nhập lại");
+                     } catch (InputException e) {
+                         System.out.println("Tuoi phai co 18 tu tuoi, vui long nhap lai tuoi");
+                     }
+                     catch (ParseException e) {
+                         System.out.println("Error: " + e.getMessage());
                      }
                  }
 

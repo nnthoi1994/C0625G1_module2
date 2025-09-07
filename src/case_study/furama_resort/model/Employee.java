@@ -66,6 +66,6 @@ public class Employee extends Person{
                 ", Education level :'" + educationLevel + '\'' +
                 ", Position: '" + position + '\'' +
                 ", Salary: '" + salary + '\'' +
-                " " + super.toString();
+                ", " + super.toString();
     }
 }
